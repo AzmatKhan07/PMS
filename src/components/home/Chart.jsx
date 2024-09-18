@@ -41,12 +41,13 @@ ChartJS.register(
 const DashboardChart = () => {
   // Sales Bar Chart data
   const salesData = {
-    labels: ["January", "February", "March", "April", "May"],
+    labels: ["January", "February", "March", "April", "May", "June", "Juley"],
     datasets: [
       {
         label: "Sales",
-        data: [150, 200, 170, 220, 180],
-        backgroundColor: "rgba(75, 192, 192, 0.5)",
+        data: [150, 200, 170, 220, 180, 200, 110],
+        backgroundColor: "rgba(153, 102, 255, 1)",
+        borderColor: "rgba(153, 102, 255, 1)",
       },
     ],
   };
@@ -61,32 +62,6 @@ const DashboardChart = () => {
         borderColor: "rgba(153, 102, 255, 1)",
         backgroundColor: "rgba(153, 102, 255, 0.2)",
         fill: true,
-      },
-    ],
-  };
-
-  // Users Pie Chart data (random values)
-  const usersData = {
-    labels: ["January", "February", "March", "April", "May"],
-    datasets: [
-      {
-        label: "Users",
-        data: [300, 450, 320, 480, 400],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.5)",
-          "rgba(54, 162, 235, 0.5)",
-          "rgba(255, 206, 86, 0.5)",
-          "rgba(75, 192, 192, 0.5)",
-          "rgba(153, 102, 255, 0.5)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-        ],
-        borderWidth: 1,
       },
     ],
   };
@@ -170,12 +145,13 @@ const DashboardChart = () => {
         </div>
 
         {/* Users Pie Chart */}
+
         <div className="chart-container">
-          <Pie
-            data={usersData}
+          <Bar
+            data={salesData}
             options={{
               ...options,
-              title: { display: true, text: "Users Data (Pie Chart)" },
+              title: { display: true, text: "Sales Data (Bar Chart)" },
             }}
           />
         </div>
